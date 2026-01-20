@@ -68,7 +68,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button asChild className="whatsapp-btn rounded-full px-6">
               <a
-                href="https://api.whatsapp.com/message/ZZCIFV5CEE7WL1"
+                href="https://wa.me/212699581184"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -103,7 +103,7 @@ const Header = () => {
               ))}
               <Button asChild className="whatsapp-btn rounded-full mt-2">
                 <a
-                  href="https://api.whatsapp.com/message/ZZCIFV5CEE7WL1"
+                  href="https://wa.me/212699581184"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

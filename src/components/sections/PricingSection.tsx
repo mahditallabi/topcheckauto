@@ -59,7 +59,7 @@ const PricingSection = () => {
                   className="w-full mt-8 whatsapp-btn rounded-full text-lg"
                 >
                   <a
-                    href="https://api.whatsapp.com/message/ZZCIFV5CEE7WL1"
+                    href="https://wa.me/212699581184"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

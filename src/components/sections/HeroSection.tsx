@@ -49,7 +49,7 @@ linear-gradient(
                 className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 text-lg"
               >
                 <a
-                  href="https://api.whatsapp.com/message/ZZCIFV5CEE7WL1"
+                  href="https://wa.me/212699581184"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
