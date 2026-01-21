@@ -312,12 +312,12 @@ const ReservationForm = () => {
             إرسال طلب الحجز
           </Button>
           
-          <p className="text-xs text-muted-foreground text-center mt-4">
+          {/* <p className="text-xs text-muted-foreground text-center mt-4">
             بالضغط على الزر، أنت توافق على 
             <a href="#" className="text-primary hover:underline mr-1"> شروط الخدمة </a>
             و
             <a href="#" className="text-primary hover:underline mr-1"> سياسة الخصوصية</a>
-          </p>
+          </p> */}
         </div>
       </form>
     </div>
