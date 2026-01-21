@@ -135,7 +135,7 @@ linear-gradient(
         </svg>
       </div>
 
-      <p className="text-white text-xl font-semibold">
+      <p className="text-[#3BAA3F] text-xl font-bold"   style={{ textShadow: `-1px -1px 0 #ffffff,1px -1px 0 #ffffff,-1px  1px 0 #ffffff,1px  1px 0 #ffffff`}}>
         فحص شامل ومعتمد
       </p>
       <p className="text-white/80">
