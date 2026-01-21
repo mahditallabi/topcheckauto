@@ -1,5 +1,6 @@
 import { Phone, MapPin, Clock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ReservationForm from "./ReservationForm";
 
 const contactInfo = [
   {
@@ -67,7 +68,7 @@ const ContactSection = () => {
           </div>
 
           {/* CTA Card */}
-          <div className="bg-primary rounded-3xl p-8 md:p-12 text-primary-foreground">
+          {/* <div className="bg-primary rounded-3xl p-8 md:p-12 text-primary-foreground">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               جاهز لفحص سيارتك؟
             </h3>
@@ -103,7 +104,10 @@ const ContactSection = () => {
                 +212 699-581184
               </a>
             </div>
-          </div>
+          </div> */}
+                    {/* Form Reservation */}
+          <ReservationForm />
+
         </div>
       </div>
     </section>

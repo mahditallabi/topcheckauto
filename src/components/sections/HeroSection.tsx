@@ -115,7 +115,7 @@ linear-gradient(
   />
 
   {/* Overlay خفيف باش يبقى النص واضح */}
-  <div className="absolute inset-0 bg-[#0F4C81]/45" />
+  <div className="absolute inset-0 bg-[#0F4C81]/0" />
 
   {/* المحتوى */}
   <div className="absolute inset-0 flex items-center justify-center">
