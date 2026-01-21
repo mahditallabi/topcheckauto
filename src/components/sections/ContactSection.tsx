@@ -106,7 +106,8 @@ const ContactSection = () => {
             </div>
           </div> */}
                     {/* Form Reservation */}
-          <ReservationForm />
+                    <div id="contactForm"><ReservationForm  /></div>
+          
 
         </div>
       </div>
