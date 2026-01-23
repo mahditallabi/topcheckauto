@@ -61,7 +61,7 @@ app.get('/api/callback', async (req: express.Request, res: express.Response) => 
 });
 
 const server = createServer((req: IncomingMessage, res: ServerResponse) => {
-  app(req as any, res as any);
+  app(req as unknown as express.Request, res as unknown as express.Response);
 });
 
 export default (req: VercelRequest, res: VercelResponse) => {
