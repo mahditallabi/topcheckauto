@@ -1,4 +1,4 @@
-import simpleOauthModule from "simple-oauth2";
+import { AuthorizationCode } from "simple-oauth2";
 
 export const create = () => {
   const clientId = process.env.OAUTH_CLIENT_ID;
@@ -8,7 +8,7 @@ export const create = () => {
     throw new Error("Missing OAuth environment variables");
   }
 
-  return simpleOauthModule.create({
+  return new AuthorizationCode({
     client: {
       id: clientId,
       secret: clientSecret,

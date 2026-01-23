@@ -38,27 +38,27 @@ app.use(cors({
 
 app.get('/api/callback', async (req: express.Request, res: express.Response) => {
   const code = req.query.code as string;
-  const { host } = req.headers;
+  const host = req.headers.host ?? "";
 
   const oauth2 = create();
 
   try {
-    const accessToken = await oauth2.authorizationCode.getToken({
+    const token = await oauth2.getToken({
       code,
-      redirect_uri: `https://${host}/api/callback`
+      redirect_uri: `https://${host}/api/callback`,
     });
-    const { token } = oauth2.accessToken.create(accessToken);
 
     res.status(200).send(
       renderBody("success", {
-        token: token.access_token,
-        provider: "github"
+        token: token.token.access_token as string,
+        provider: "github",
       })
     );
   } catch (e) {
     res.status(200).send(renderBody("error", e));
   }
 });
+
 
 const server = createServer((req: IncomingMessage, res: ServerResponse) => {
   app(req as unknown as express.Request, res as unknown as express.Response);
