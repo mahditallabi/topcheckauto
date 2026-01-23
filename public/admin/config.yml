@@ -2,8 +2,8 @@ backend:
   name: github
   repo: IGAyoubArt/auto
   branch: main
-  auth_type: pkce
-  app_id: Ov23lirHdc88vwPYcdfJ
+  base_url: https://autocheck-gray.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
