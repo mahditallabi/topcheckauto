@@ -1,0 +1,98 @@
+{
+  "title": {
+    "ar": "آراء <span class=\"text-accent\">عملائنا</span>",
+    "en": "Client <span class=\"text-accent\">Testimonials</span>"
+  },
+  "description": {
+    "ar": "تجارب حقيقية من زبائن استفادوا من خدماتنا في مختلف مدن المغرب",
+    "en": "Real experiences from customers who benefited from our services in various Moroccan cities"
+  },
+  "testimonials": [
+    {
+      "name": {
+        "ar": "أحمد البكري",
+        "en": "Ahmed El Bakri"
+      },
+      "role": {
+        "ar": "زبون من الدار البيضاء",
+        "en": "Client from Casablanca"
+      },
+      "content": {
+        "ar": "خدمة ممتازة وفريق محترف. ساعدوني في اكتشاف مشاكل كانت مخفية في السيارة التي كنت سأشتريها.",
+        "en": "Excellent service and professional team. They helped me discover hidden problems in the car I was about to buy."
+      },
+      "rating": {
+  "ar": "5",
+  "en": "5"
+}
+
+    },
+    {
+      "name": {
+        "ar": "سارة المنصوري",
+        "en": "Sarah El Mansouri"
+      },
+      "role": {
+        "ar": "زبونة من الرباط",
+        "en": "Client from Rabat"
+      },
+      "content": {
+        "ar": "تجربة رائعة! التقني كان محترفاً جداً وشرح لي كل التفاصيل. وفرت الكثير من المال.",
+        "en": "Amazing experience! The technician was very professional and explained all the details to me. Saved a lot of money."
+      },
+      "rating": {
+  "ar": "5",
+  "en": "5"
+}
+
+    },
+    {
+      "name": {
+        "ar": "محمد الفاسي",
+        "en": "Mohamed El Fassi"
+      },
+      "role": {
+        "ar": "زبون من فاس",
+        "en": "Client from Fez"
+      },
+      "content": {
+        "ar": "خدمة سريعة ودقيقة. التقرير كان مفصلاً جداً وساعدني في التفاوض على سعر أفضل.",
+        "en": "Fast and accurate service. The report was very detailed and helped me negotiate a better price."
+      },
+      "rating": {
+  "ar": "5",
+  "en": "5"
+}
+
+    },
+    {
+      "name": {
+        "ar": "كريمة الطنجاوي",
+        "en": "Karima El Tangawi"
+      },
+      "role": {
+        "ar": "زبونة من طنجة",
+        "en": "Client from Tangier"
+      },
+      "content": {
+        "ar": "أفضل استثمار قبل شراء سيارة مستعملة. اكتشفوا أن السيارة تعرضت لحادث وتم إصلاحها.",
+        "en": "Best investment before buying a used car. They discovered that the car had been in an accident and repaired."
+      },
+      "rating": {
+  "ar": "5",
+  "en": "5"
+}
+
+    }
+  ],
+  "stats": {
+    "clientSatisfaction": {
+      "ar": "+98% رضا العملاء • ",
+      "en": "+98% client satisfaction • "
+    },
+    "rating": {
+      "ar": "4.9/5 تقييم",
+      "en": "4.9/5 rating"
+    }
+  }
+}

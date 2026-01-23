@@ -1,0 +1,90 @@
+{
+  "title": {
+    "ar": "تواصل <span class=\"text-accent\">معنا</span>",
+    "en": "Contact <span class=\"text-accent\">Us</span>"
+  },
+  "description": {
+    "ar": "نحن هنا لمساعدتك في اتخاذ القرار الصحيح قبل شراء سيارتك المستعملة. تواصل معنا الآن للحصول على موعد فحص.",
+    "en": "We are here to help you make the right decision before buying your used car. Contact us now to get an inspection appointment."
+  },
+  "contactInfo": {
+    "phone": {
+      "ar": "الهاتف",
+      "en": "Phone"
+    },
+    "email": {
+      "ar": "البريد الإلكتروني",
+      "en": "Email"
+    },
+    "workingHours": {
+      "ar": "ساعات العمل",
+      "en": "Working Hours"
+    },
+    "area": {
+      "ar": "المنطقة",
+      "en": "Area"
+    },
+    "workingHoursValue": {
+      "ar": "الإثنين - السبت: 9:00 - 19:00",
+      "en": "Monday - Saturday: 9:00 AM - 7:00 PM"
+    },
+    "areaValue": {
+      "ar": "جميع أنحاء المغرب",
+      "en": "All over Morocco"
+    }
+  },
+  "booking": {
+    "title": {
+      "ar": "احجز موعد فحص",
+      "en": "Book an Inspection"
+    },
+    "description": {
+      "ar": "املأ المعلومات التالية وسنتواصل معك خلال 24 ساعة",
+      "en": "Fill in the information below and we will contact you within 24 hours"
+    },
+    "form": {
+      "fullName": {
+        "ar": "الاسم الكامل",
+        "en": "Full Name"
+      },
+      "phoneNumber": {
+        "ar": "رقم الهاتف",
+        "en": "Phone Number"
+      },
+      "city": {
+        "ar": "المدينة",
+        "en": "City"
+      },
+      "additionalNotes": {
+        "ar": "ملاحظات إضافية",
+        "en": "Additional Notes"
+      },
+      "placeholders": {
+        "fullName": {
+          "ar": "أدخل اسمك الكامل",
+          "en": "Enter your full name"
+        },
+        "phoneNumber": {
+          "ar": "+212 600-000000",
+          "en": "+212 600-000000"
+        },
+        "city": {
+          "ar": "المدينة التي تقيم فيها",
+          "en": "City where you live"
+        },
+        "additionalNotes": {
+          "ar": "أي معلومات إضافية عن السيارة أو طلبات خاصة...",
+          "en": "Any additional information about the car or special requests..."
+        }
+      }
+    },
+    "submitButton": {
+      "ar": "إرسال طلب الحجز",
+      "en": "Send Booking Request"
+    },
+    "note": {
+      "ar": "<span class=\"font-bold text-accent\">ملاحظة:</span> سنتواصل معك في أقرب وقت ممكن لتأكيد الموعد.",
+      "en": "<span class=\"font-bold text-accent\">Note:</span> We will contact you as soon as possible to confirm the appointment."
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": {
+      "ar": "الرئيسية",
+      "en": "Home"
+    },
+    "services": {
+      "ar": "خدماتنا",
+      "en": "Services"
+    },
+    "whyUs": {
+      "ar": "لماذا نحن",
+      "en": "Why Us"
+    },
+    "pricing": {
+      "ar": "الأسعار",
+      "en": "Pricing"
+    },
+    "testimonials": {
+      "ar": "آراء العملاء",
+      "en": "Testimonials"
+    },
+    "contact": {
+      "ar": "تواصل معنا",
+      "en": "Contact"
+    }
+  },
+  "buttons": {
+    "bookAppointment": {
+      "ar": "احجز موعد",
+      "en": "Book Appointment"
+    },
+    "contactUs": {
+      "ar": "تواصل معنا",
+      "en": "Contact Us"
+    },
+    "send": {
+      "ar": "إرسال",
+      "en": "Send"
+    },
+    "learnMore": {
+      "ar": "تعرف أكثر",
+      "en": "Learn More"
+    }
+  },
+  "footer": {
+    "description": {
+      "ar": "خبراء فحص السيارات المستعملة في المغرب. نساعدك على اتخاذ القرار الصحيح قبل الشراء.",
+      "en": "Used car inspection experts in Morocco. We help you make the right decision before buying."
+    },
+    "quickLinks": {
+      "ar": "روابط سريعة",
+      "en": "Quick Links"
+    },
+    "contactUs": {
+      "ar": "تواصل معنا",
+      "en": "Contact Us"
+    },
+    "rightsReserved": {
+      "ar": "جميع الحقوق محفوظة",
+      "en": "All rights reserved"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "title": {
+    "ar": "نوفّر لزبنائنا <span class=\"text-accent\">خدمات شاملة</span> ومميزة",
+    "en": "We Provide Our Clients with <span class=\"text-accent\">Comprehensive</span> and Specialized Services"
+  },
+  "description": {
+    "ar": "يتم تنفيذها باحترافية عالية لتواكب تطلعات السوق المغربي وتلبي احتياجات ومتطلبات الزبناء لتفادي عمليات النصب",
+    "en": "Implemented with high professionalism to meet the expectations of the Moroccan market and satisfy customer needs and requirements to avoid fraud"
+  },
+  "servicesList": {
+    "electricalSystems": {
+      "title": {
+        "ar": "أنظمة الكهربائية",
+        "en": "Electrical Systems"
+      },
+      "description": {
+        "ar": "فحص جميع الأنظمة الكهربائية (Batterie - Alternateur)",
+        "en": "Inspection of all electrical systems (Battery - Alternator)"
+      }
+    },
+    "carDiagnostics": {
+      "title": {
+        "ar": "تشخيص السيارة",
+        "en": "Car Diagnostics"
+      },
+      "description": {
+        "ar": "فحص عن طريق جهاز Diagnostique متطور",
+        "en": "Inspection using advanced diagnostic equipment"
+      }
+    },
+    "paintInspection": {
+      "title": {
+        "ar": "فحص الطلاء",
+        "en": "Paint Inspection"
+      },
+      "description": {
+        "ar": "فحص سمك الطلاء هل أصلي أم لا باستخدام أحدث الأجهزة",
+        "en": "Checking paint thickness to verify originality using the latest equipment"
+      }
+    },
+    "engineTransmission": {
+      "title": {
+        "ar": "فحص المحرك وناقل الحركة",
+        "en": "Engine and Transmission Inspection"
+      },
+      "description": {
+        "ar": "فحص أداء وكفاءة المحرك وناقل الحركة بدقة عالية",
+        "en": "High-precision inspection of engine and transmission performance and efficiency"
+      }
+    },
+    "carBody": {
+      "title": {
+        "ar": "هيكل السيارة",
+        "en": "Car Body"
+      },
+      "description": {
+        "ar": "فحص الهيكل الداخلي والخارجي والتأكد من عدم وجود حادث",
+        "en": "Inspection of internal and external body structure to ensure no accident history"
+      }
+    },
+    "safetySystems": {
+      "title": {
+        "ar": "أنظمة السلامة",
+        "en": "Safety Systems"
+      },
+      "description": {
+        "ar": "فحص أنظمة السلامة العامة (Airbag - Freinage)",
+        "en": "Inspection of general safety systems (Airbag - Braking)"
+      }
+    }
+  },
+  "brandsSection": {
+    "title": {
+      "ar": "خبرة في جميع ماركات السيارات",
+      "en": "Experience with All Car Brands"
+    },
+    "brands": {
+      "ar": ["مرسيدس", "بي إم دبليو", "أودي", "تويوتا", "فولكس فاجن", "رينو", "بيجو", "هيونداي"],
+      "en": ["Mercedes", "BMW", "Audi", "Toyota", "Volkswagen", "Renault", "Peugeot", "Hyundai"]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "title": {
+    "ar": "لماذا <span class=\"text-accent\">نحن</span>؟",
+    "en": "Why <span class=\"text-accent\">Choose Us</span>?"
+  },
+  "description": {
+    "ar": "نلتزم بتوفير تجربة شراء لسيارات المستعملة بدون أي مشاكل. فريقنا المؤهل من تقنيين متخصصين لمرافقتك طوال العملية، وتزويدك بمعلومات دقيقة ومفصلة حول كل سيارة.",
+    "en": "We are committed to providing a hassle-free used car buying experience. Our qualified team of specialized technicians will accompany you throughout the process and provide you with accurate and detailed information about each car."
+  },
+  "mission": {
+    "title": {
+      "ar": "مهمتنا ورؤيتنا",
+      "en": "Our Mission & Vision"
+    },
+    "description": {
+      "ar": "نهدف إلى جعل سوق السيارات المستعملة أكثر أمانًا وشفافية للمشترين. نحن نؤمن بأن كل مشتري سيارة يستحق أن يعرف الحقيقة الكاملة عن المركبة قبل اتخاذ قرار الشراء.",
+      "en": "We aim to make the used car market safer and more transparent for buyers. We believe that every car buyer deserves to know the full truth about the vehicle before making a purchase decision."
+    },
+    "points": [
+      {
+        "ar": "فريق من التقنيين المعتمدين",
+        "en": "Team of certified technicians"
+      },
+      {
+        "ar": "أحدث أجهزة التشخيص",
+        "en": "Latest diagnostic equipment"
+      },
+      {
+        "ar": "خدمة في جميع أنحاء المغرب",
+        "en": "Service throughout Morocco"
+      }
+    ]
+  },
+  "stats": {
+    "experience": {
+      "ar": "سنوات خبرة",
+      "en": "Years of experience"
+    },
+    "clients": {
+      "ar": "عميل",
+      "en": "Clients"
+    },
+    "accuracy": {
+      "ar": "دقة",
+      "en": "Accuracy"
+    }
+  },
+  "features": [
+    {
+      "title": {
+        "ar": "السهولة",
+        "en": "Convenience"
+      },
+      "description": {
+        "ar": "يتنقل التقني إلى مالك السيارة، فوجودك ليس إلزاميًا حتى لو رأيت سيارة في مدينة أخرى",
+        "en": "The technician travels to the car owner, your presence is not mandatory even if you saw a car in another city"
+      }
+    },
+    {
+      "title": {
+        "ar": "النصائح",
+        "en": "Expert Advice"
+      },
+      "description": {
+        "ar": "يوصي التقنيون لدينا بما إذا كان بإمكانك شراء السيارة أم لا إضافة إلى الثمن المناسب لها",
+        "en": "Our technicians recommend whether you should buy the car or not, plus the appropriate price for it"
+      }
+    },
+    {
+      "title": {
+        "ar": "الجاهزية",
+        "en": "Availability"
+      },
+      "description": {
+        "ar": "التقنيون لدينا على استعداد دائم للإستجابة لمطالبكم في أي وقت",
+        "en": "Our technicians are always ready to respond to your requests at any time"
+      }
+    },
+    {
+      "title": {
+        "ar": "الشفافية",
+        "en": "Transparency"
+      },
+      "description": {
+        "ar": "يقوم التقنيون لدينا المحترفون بفحص السيارة في أكثر من 150 نقطة تفتيش",
+        "en": "Our professional technicians inspect the car at more than 150 inspection points"
+      }
+    }
+  ],
+  "qualityCards": {
+    "highQuality": {
+      "title": {
+        "ar": "جودة عالية",
+        "en": "High Quality"
+      },
+      "description": {
+        "ar": "أعلى معايير الجودة في الفحص",
+        "en": "Highest quality standards in inspection"
+      }
+    },
+    "serviceGuarantee": {
+      "title": {
+        "ar": "ضمان الخدمة",
+        "en": "Service Guarantee"
+      },
+      "description": {
+        "ar": "تقارير مضمونة ودقيقة",
+        "en": "Guaranteed and accurate reports"
+      }
+    }
+  }
+}

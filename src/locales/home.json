@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title1": {
+      "ar": "هل تريد شراء",
+      "en": "Do you want to buy a"
+    },
+    "title2": {
+      "ar": "سيارة مستعملة",
+      "en": "used car"
+    },
+    "subtitle": {
+      "ar": "لكن ليس لديك الخبرة في فحص السيارات المستعملة؟ إتصل الان لحجز موعد مع أحد التقنيين لدينا، واحصل على تقرير شامل ومفصل قبل الشراء واترك المسؤولية لنا.",
+      "en": "But don't have experience in used car inspection? Contact us now to book an appointment with one of our technicians, get a comprehensive report before buying, and leave the responsibility to us."
+    },
+    "cta1": {
+      "ar": "احجز الخبير الأن",
+      "en": "Book an Expert Now"
+    },
+    "cta2": {
+      "ar": "تمن الخدمة",
+      "en": "Service Price"
+    },
+    "stats": {
+      "inspectionPoints": {
+        "ar": "نقطة فحص",
+        "en": "Inspection Points"
+      },
+      "happyClients": {
+        "ar": "عميل سعيد",
+        "en": "Happy Clients"
+      },
+      "citiesCovered": {
+        "ar": "مدن مغطاة",
+        "en": "Cities Covered"
+      }
+    }
+  }
+}

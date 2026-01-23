@@ -1,4 +1,4 @@
-import { MapPin, Clock, Calendar, User, Car, MessageSquare, CheckCircle } from "lucide-react";
+import { MapPin, Clock, Calendar, User, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,10 +10,7 @@ const ReservationForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     city: "",
-    carType: "",
-    date: "",
     time: "",
     message: ""
   });
@@ -46,18 +43,6 @@ const ReservationForm = () => {
     "مدن أخرى"
   ];
 
-  const carTypes = [
-    "سيارة صالون",
-    "سيارة دفع رباعي (SUV)",
-    "سيارة عائلية",
-    "سيارة رياضية",
-    "سيارة كهربائية",
-    "سيارة هجينة",
-    "سيارة تجارية",
-    "دراجة نارية",
-    "أخرى"
-  ];
-
   const timeSlots = [
     "9:00 - 10:00",
     "10:00 - 11:00",
@@ -78,26 +63,48 @@ const ReservationForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // هنا يمكنك إضافة منطق إرسال البيانات إلى الخادم
-    console.log("Form data:", formData);
-    setIsSubmitted(true);
     
-    // إعادة تعيين النموذج بعد 5 ثواني
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        city: "",
-        carType: "",
-        date: "",
-        time: "",
-        message: ""
+    try {
+      // إرسال البيانات إلى FormSubmit
+      const response = await fetch("https://formsubmit.co/ajax/ig.ayoub.dev@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "طلب حجز جديد - فحص سيارة",
+          _captcha: "false",
+          _template: "table"
+        })
       });
-    }, 5000);
+
+      if (response.ok) {
+        console.log("Form submitted successfully:", formData);
+        setIsSubmitted(true);
+        
+        // إعادة تعيين النموذج بعد 5 ثواني
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            phone: "",
+            city: "",
+            time: "",
+            message: ""
+          });
+        }, 5000);
+      } else {
+        console.error("Form submission failed");
+        alert("عذراً، حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("عذراً، حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.");
+    }
   };
 
   if (isSubmitted) {
@@ -137,7 +144,12 @@ const ReservationForm = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} action="https://formsubmit.co/your-email@example.com" method="POST">
+        {/* إضافة حقول مخفية لـ FormSubmit */}
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="طلب حجز جديد - فحص سيارة" />
+        <input type="hidden" name="_template" value="table" />
+        
         <div className="grid md:grid-cols-2 gap-6">
           {/* الاسم الكامل */}
           <div className="space-y-3">
@@ -175,25 +187,6 @@ const ReservationForm = () => {
             />
           </div>
 
-          {/* البريد الإلكتروني */}
-          {/* <div className="space-y-3">
-            <label className="flex items-center gap-2 text-sm font-medium text-foreground">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-              البريد الإلكتروني
-            </label>
-            <Input
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="example@domain.com"
-              className="h-12 rounded-xl border-border bg-secondary/50 focus:border-primary"
-              dir="ltr"
-            />
-          </div> */}
-
           {/* المدينة */}
           <div className="space-y-3">
             <label className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -217,47 +210,6 @@ const ReservationForm = () => {
               </SelectContent>
             </Select>
           </div>
-
-          {/* نوع السيارة */}
-          {/* <div className="space-y-3">
-            <label className="flex items-center gap-2 text-sm font-medium text-foreground">
-              <Car className="w-4 h-4" />
-              نوع السيارة *
-            </label>
-            <Select
-              value={formData.carType}
-              onValueChange={(value) => handleSelectChange("carType", value)}
-              required
-            >
-              <SelectTrigger className="h-12 rounded-xl border-border bg-secondary/50 focus:border-primary">
-                <SelectValue placeholder="اختر نوع السيارة" />
-              </SelectTrigger>
-              <SelectContent>
-                {carTypes.map((type) => (
-                  <SelectItem key={type} value={type}>
-                    {type}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div> */}
-
-          {/* التاريخ */}
-          {/* <div className="space-y-3">
-            <label className="flex items-center gap-2 text-sm font-medium text-foreground">
-              <Calendar className="w-4 h-4" />
-              التاريخ المفضل *
-            </label>
-            <Input
-              name="date"
-              type="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-              className="h-12 rounded-xl border-border bg-secondary/50 focus:border-primary"
-              min={new Date().toISOString().split('T')[0]}
-            />
-          </div> */}
 
           {/* الوقت */}
           <div className="space-y-3">
@@ -287,7 +239,9 @@ const ReservationForm = () => {
         {/* الرسالة */}
         <div className="space-y-3">
           <label className="flex items-center gap-2 text-sm font-medium text-foreground">
-            <MessageSquare className="w-4 h-4" />
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
             ملاحظات إضافية
           </label>
           <Textarea
@@ -311,13 +265,6 @@ const ReservationForm = () => {
             </svg>
             إرسال طلب الحجز
           </Button>
-          
-          {/* <p className="text-xs text-muted-foreground text-center mt-4">
-            بالضغط على الزر، أنت توافق على 
-            <a href="#" className="text-primary hover:underline mr-1"> شروط الخدمة </a>
-            و
-            <a href="#" className="text-primary hover:underline mr-1"> سياسة الخصوصية</a>
-          </p> */}
         </div>
       </form>
     </div>

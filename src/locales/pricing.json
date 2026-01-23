@@ -1,0 +1,114 @@
+{
+  "title": {
+    "ar": "باقات فحص <span class=\"text-accent\">السيارات</span>",
+    "en": "Car Inspection <span class=\"text-accent\">Packages</span>"
+  },
+  "description": {
+    "ar": "اختر الباقة المناسبة لسيارتك واحصل على فحص دقيق ومفصل مع فريقنا من الخبراء",
+    "en": "Choose the package that suits your car and get a detailed inspection with our team of experts"
+  },
+  "packages": {
+    "basic": {
+      "name": {
+        "ar": "الباقة الأساسية",
+        "en": "Basic Package"
+      },
+      "description": {
+        "ar": "للفحص الأولي والتقييم العام",
+        "en": "For initial inspection and general evaluation"
+      },
+      "features": {
+        "ar": [
+          "فحص الهيكل الخارجي",
+          "فحص النظام الكهربائي",
+          "فحص المحرك والإطارات",
+          "تقرير مفصل"
+        ],
+        "en": [
+          "Exterior body inspection",
+          "Electrical system check",
+          "Engine and tires inspection",
+          "Detailed report"
+        ]
+      }
+    },
+    "standard": {
+      "name": {
+        "ar": "الباقة المتكاملة",
+        "en": "Standard Package"
+      },
+      "description": {
+        "ar": "الفحص الشامل الموصى به",
+        "en": "Recommended comprehensive inspection"
+      },
+      "features": {
+        "ar": [
+          "جميع مميزات الأساسية",
+          "فحص متعمق للمحرك",
+          "اختبار القيادة 15 دقيقة",
+          "تقرير مع صور وتوصيات",
+          "دعم 7 أيام"
+        ],
+        "en": [
+          "All Basic Package features",
+          "Deep engine inspection",
+          "15-minute test drive",
+          "Report with photos and recommendations",
+          "7-day support"
+        ]
+      },
+      "popular": {
+        "ar": "الأكثر طلباً",
+        "en": "Most Popular"
+      }
+    },
+    "premium": {
+      "name": {
+        "ar": "الباقة المميزة",
+        "en": "Premium Package"
+      },
+      "description": {
+        "ar": "فحص مكثف للمركبات الفاخرة",
+        "en": "Intensive inspection for luxury vehicles"
+      },
+      "features": {
+        "ar": [
+          "جميع مميزات المتكاملة",
+          "فحص التعليق والفرامل",
+          "تشخيص الكمبيوتر المتقدم",
+          "اختبار قيادة 30 دقيقة",
+          "تقرير مع فيديو",
+          "دعم 30 يوماً",
+          "شهادة ضمان"
+        ],
+        "en": [
+          "All Standard Package features",
+          "Suspension and brakes inspection",
+          "Advanced computer diagnostics",
+          "30-minute test drive",
+          "Report with video",
+          "30-day support",
+          "Warranty certificate"
+        ]
+      }
+    }
+  },
+  "price": {
+    "currency": {
+      "ar": "درهم",
+      "en": "MAD"
+    },
+    "selectButton": {
+      "ar": "اختر الباقة",
+      "en": "Select Package"
+    },
+    "selectPopularButton": {
+      "ar": "اختر هذه الباقة",
+      "en": "Choose this Package"
+    }
+  },
+  "note": {
+    "ar": "<span class=\"font-bold text-accent\">ملاحظة:</span> الأسعار تشمل الضريبة ويمكن أن تختلف حسب نوع السيارة والموقع.",
+    "en": "<span class=\"font-bold text-accent\">Note:</span> Prices include tax and may vary depending on the type of vehicle and location."
+  }
+}

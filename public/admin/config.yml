@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: IGAyoubArt/auto.git
+  branch: main
+  base_url: https://autocheck-gray.vercel.app/
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "translations"
+    label: "Translations"
+    folder: "src/locales"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Arabic", name: "ar", widget: "text" }
+      - { label: "English", name: "en", widget: "text" }
