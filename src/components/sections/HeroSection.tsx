@@ -257,7 +257,6 @@ useEffect(() => {
             >
               <a href="#formcontact" rel="noopener noreferrer">
                 {t('hero.cta1')}
-                <ArrowLeft className="w-5 h-5 mr-2" />
               </a>
             </Button>
           </motion.div>
