@@ -366,19 +366,37 @@ const [formData, setFormData] = useState({
                 <info.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">{info.title}</h3>
-              {info.href ? (
-                <a
-                  href={info.href}
-                  className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block break-words overflow-hidden"
+{info.href ? (
+  <a
+    href={info.href}
+    className="
+      text-muted-foreground
+      hover:text-accent
+      transition-colors
+      leading-relaxed
+      block
+      break-all
+      sm:break-words
+      overflow-hidden
+    "
+    dir="ltr"
+  >
+    {info.value}
+  </a>
+) : (
+  <p
+    className="
+      text-muted-foreground
+      leading-relaxed
+      break-all
+      sm:break-words
+      overflow-hidden
+    "
+  >
+    {info.value}
+  </p>
+)}
 
-                  dir="ltr"
-                >
-                  {info.value}
-                </a>
-              ) : (
-                <p className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block break-words overflow-hidden"
->{info.value}</p>
-              )}
             </div>
           ))}
         </div>
