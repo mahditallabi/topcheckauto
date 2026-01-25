@@ -121,17 +121,25 @@
 // export default Header;
 
 
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import { Phone, Clock, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getHero, HeroData } from "@/api/hero";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation('common');
+  const { t,locale } = useTranslation('common');
+  const [hero, setHero] = useState<HeroData | null>(null);
 
+  useEffect(() => {
+    getHero(locale).then((data) => {
+      console.log('HERO FROM SANITY:', data);
+      setHero(data);
+    });
+  }, [locale]);
   const navLinks = [
     { label: t('nav.home'), href: '#home' },
     { label: t('nav.services'), href: '#services' },
@@ -141,6 +149,16 @@ const Header = () => {
     { label: t('nav.contact'), href: '#contact' },
   ];
 
+const formatPhoneForTel = (phone?: string) => {
+  if (!phone) return "";
+  return phone.replace(/[^0-9+]/g, "");
+};
+const formatPhoneForWhatsApp = (phone?: string) => {
+  if (!phone) return "";
+  return phone.replace(/[^0-9]/g, "");
+};
+
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Bar */}
@@ -148,11 +166,11 @@ const Header = () => {
         <div className="container flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <a
-              href="tel:+212699581184"
+              href={`tel:${formatPhoneForTel(hero?.phone)}`}
               className="flex items-center gap-2 hover:text-accent transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span dir="ltr">+212 699-581184</span>
+              <span dir="ltr">{hero?.phone}{" "}</span>
             </a>
           </div>
           <div className="hidden sm:flex items-center gap-2">
@@ -182,15 +200,20 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button asChild className="whatsapp-btn rounded-full px-6">
-              <a
-                href="https://wa.me/212699581184"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('buttons.bookAppointment')}
-              </a>
-            </Button>
+<Button asChild className="whatsapp-btn rounded-full px-6">
+  <a
+    href={
+      hero?.phone
+        ? `https://wa.me/${formatPhoneForWhatsApp(hero.phone)}`
+        : "#"
+    }
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {t('buttons.bookAppointment')}
+  </a>
+</Button>
+
           </div>
 
           {/* Mobile Menu Toggle */}
