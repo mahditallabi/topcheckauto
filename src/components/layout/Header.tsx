@@ -222,7 +222,7 @@ const formatPhoneForWhatsApp = (phone?: string) => {
             <button
               className="p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Toggle menus"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
