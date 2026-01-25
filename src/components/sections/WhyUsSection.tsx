@@ -224,7 +224,7 @@ useEffect(() => {
               <img
                 src={imageUrl}
                 alt="خدمة فحص السيارات"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[400px] object-contain"
               />
 
               <div className="absolute top-6 left-6 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
