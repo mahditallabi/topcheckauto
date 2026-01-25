@@ -194,7 +194,7 @@ useEffect(() => {
   const missionPoints = tArray<string>('mission.points');
   const features = tArray<Feature>('features');
   const imageUrl = hero?.image
-   ? urlFor(hero.image).width(1000).height(400).quality(80).url()
+   ? urlFor(hero.image).height(400).quality(80).url()
    : "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80";
 
   return (
