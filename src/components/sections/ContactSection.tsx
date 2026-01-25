@@ -369,13 +369,15 @@ const [formData, setFormData] = useState({
               {info.href ? (
                 <a
                   href={info.href}
-                  className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block"
+                  className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block break-words overflow-hidden"
+
                   dir="ltr"
                 >
                   {info.value}
                 </a>
               ) : (
-                <p className="text-muted-foreground leading-relaxed">{info.value}</p>
+                <p className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block break-words overflow-hidden"
+>{info.value}</p>
               )}
             </div>
           ))}
