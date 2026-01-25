@@ -1,11 +1,11 @@
 {
   "title": {
     "ar": "آراء <span class=\"text-accent\">عملائنا</span>",
-    "en": "Client <span class=\"text-accent\">Testimonials</span>"
+    "en": "Avis de nos <span class=\"text-accent\">clients</span>"
   },
   "description": {
     "ar": "تجارب حقيقية من زبائن استفادوا من خدماتنا في مختلف مدن المغرب",
-    "en": "Real experiences from customers who benefited from our services in various Moroccan cities"
+    "en": "Expériences réelles de clients qui ont bénéficié de nos services dans différentes villes du Maroc"
   },
   "testimonials": [
     {
@@ -15,17 +15,16 @@
       },
       "role": {
         "ar": "زبون من الدار البيضاء",
-        "en": "Client from Casablanca"
+        "en": "Client de Casablanca"
       },
       "content": {
         "ar": "خدمة ممتازة وفريق محترف. ساعدوني في اكتشاف مشاكل كانت مخفية في السيارة التي كنت سأشتريها.",
-        "en": "Excellent service and professional team. They helped me discover hidden problems in the car I was about to buy."
+        "en": "Service excellent et équipe professionnelle. Ils m'ont aidé à découvrir des problèmes cachés dans la voiture que j'étais sur le point d'acheter."
       },
       "rating": {
-  "ar": "5",
-  "en": "5"
-}
-
+        "ar": "5",
+        "en": "5"
+      }
     },
     {
       "name": {
@@ -34,17 +33,16 @@
       },
       "role": {
         "ar": "زبونة من الرباط",
-        "en": "Client from Rabat"
+        "en": "Client de Rabat"
       },
       "content": {
         "ar": "تجربة رائعة! التقني كان محترفاً جداً وشرح لي كل التفاصيل. وفرت الكثير من المال.",
-        "en": "Amazing experience! The technician was very professional and explained all the details to me. Saved a lot of money."
+        "en": "Expérience incroyable ! Le technicien était très professionnel et m'a expliqué tous les détails. J'ai économisé beaucoup d'argent."
       },
       "rating": {
-  "ar": "5",
-  "en": "5"
-}
-
+        "ar": "5",
+        "en": "5"
+      }
     },
     {
       "name": {
@@ -53,17 +51,16 @@
       },
       "role": {
         "ar": "زبون من فاس",
-        "en": "Client from Fez"
+        "en": "Client de Fès"
       },
       "content": {
         "ar": "خدمة سريعة ودقيقة. التقرير كان مفصلاً جداً وساعدني في التفاوض على سعر أفضل.",
-        "en": "Fast and accurate service. The report was very detailed and helped me negotiate a better price."
+        "en": "Service rapide et précis. Le rapport était très détaillé et m'a aidé à négocier un meilleur prix."
       },
       "rating": {
-  "ar": "5",
-  "en": "5"
-}
-
+        "ar": "5",
+        "en": "5"
+      }
     },
     {
       "name": {
@@ -72,27 +69,26 @@
       },
       "role": {
         "ar": "زبونة من طنجة",
-        "en": "Client from Tangier"
+        "en": "Client de Tanger"
       },
       "content": {
         "ar": "أفضل استثمار قبل شراء سيارة مستعملة. اكتشفوا أن السيارة تعرضت لحادث وتم إصلاحها.",
-        "en": "Best investment before buying a used car. They discovered that the car had been in an accident and repaired."
+        "en": "Le meilleur investissement avant d'acheter une voiture d'occasion. Ils ont découvert que la voiture avait été accidentée et réparée."
       },
       "rating": {
-  "ar": "5",
-  "en": "5"
-}
-
+        "ar": "5",
+        "en": "5"
+      }
     }
   ],
   "stats": {
     "clientSatisfaction": {
       "ar": "+98% رضا العملاء • ",
-      "en": "+98% client satisfaction • "
+      "en": "+98% satisfaction client • "
     },
     "rating": {
       "ar": "4.9/5 تقييم",
-      "en": "4.9/5 rating"
+      "en": "4.9/5 évaluation"
     }
   }
 }

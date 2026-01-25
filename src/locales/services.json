@@ -1,78 +1,78 @@
 {
   "title": {
     "ar": "نوفّر لزبنائنا <span class=\"text-accent\">خدمات شاملة</span> ومميزة",
-    "en": "We Provide Our Clients with <span class=\"text-accent\">Comprehensive</span> and Specialized Services"
+    "en": "Nous offrons à nos clients des services <span class=\"text-accent\">complets</span> et spécialisés"
   },
   "description": {
     "ar": "يتم تنفيذها باحترافية عالية لتواكب تطلعات السوق المغربي وتلبي احتياجات ومتطلبات الزبناء لتفادي عمليات النصب",
-    "en": "Implemented with high professionalism to meet the expectations of the Moroccan market and satisfy customer needs and requirements to avoid fraud"
+    "en": "Mis en œuvre avec un haut niveau de professionnalisme pour répondre aux attentes du marché marocain et satisfaire les besoins et exigences des clients afin d'éviter les fraudes"
   },
   "servicesList": {
     "electricalSystems": {
       "title": {
         "ar": "أنظمة الكهربائية",
-        "en": "Electrical Systems"
+        "en": "Systèmes électriques"
       },
       "description": {
         "ar": "فحص جميع الأنظمة الكهربائية (Batterie - Alternateur)",
-        "en": "Inspection of all electrical systems (Battery - Alternator)"
+        "en": "Inspection de tous les systèmes électriques (Batterie - Alternateur)"
       }
     },
     "carDiagnostics": {
       "title": {
         "ar": "تشخيص السيارة",
-        "en": "Car Diagnostics"
+        "en": "Diagnostic automobile"
       },
       "description": {
         "ar": "فحص عن طريق جهاز Diagnostique متطور",
-        "en": "Inspection using advanced diagnostic equipment"
+        "en": "Inspection utilisant un équipement de diagnostic avancé"
       }
     },
     "paintInspection": {
       "title": {
         "ar": "فحص الطلاء",
-        "en": "Paint Inspection"
+        "en": "Inspection de la peinture"
       },
       "description": {
         "ar": "فحص سمك الطلاء هل أصلي أم لا باستخدام أحدث الأجهزة",
-        "en": "Checking paint thickness to verify originality using the latest equipment"
+        "en": "Vérification de l'épaisseur de la peinture pour vérifier son authenticité en utilisant les équipements les plus récents"
       }
     },
     "engineTransmission": {
       "title": {
         "ar": "فحص المحرك وناقل الحركة",
-        "en": "Engine and Transmission Inspection"
+        "en": "Inspection du moteur et de la transmission"
       },
       "description": {
         "ar": "فحص أداء وكفاءة المحرك وناقل الحركة بدقة عالية",
-        "en": "High-precision inspection of engine and transmission performance and efficiency"
+        "en": "Inspection haute précision des performances et de l'efficacité du moteur et de la transmission"
       }
     },
     "carBody": {
       "title": {
         "ar": "هيكل السيارة",
-        "en": "Car Body"
+        "en": "Carrosserie"
       },
       "description": {
         "ar": "فحص الهيكل الداخلي والخارجي والتأكد من عدم وجود حادث",
-        "en": "Inspection of internal and external body structure to ensure no accident history"
+        "en": "Inspection de la structure interne et externe de la carrosserie pour s'assurer de l'absence d'accident"
       }
     },
     "safetySystems": {
       "title": {
         "ar": "أنظمة السلامة",
-        "en": "Safety Systems"
+        "en": "Systèmes de sécurité"
       },
       "description": {
         "ar": "فحص أنظمة السلامة العامة (Airbag - Freinage)",
-        "en": "Inspection of general safety systems (Airbag - Braking)"
+        "en": "Inspection des systèmes de sécurité généraux (Airbag - Freinage)"
       }
     }
   },
   "brandsSection": {
     "title": {
       "ar": "خبرة في جميع ماركات السيارات",
-      "en": "Experience with All Car Brands"
+      "en": "Expérience avec toutes les marques de voitures"
     },
     "brands": {
       "ar": ["مرسيدس", "بي إم دبليو", "أودي", "تويوتا", "فولكس فاجن", "رينو", "بيجو", "هيونداي"],

@@ -110,10 +110,10 @@ type Testimonial = {
 };
 
 const TestimonialsSection = () => {
-  const { tArray, tString, locale } = useTranslation('testimonials');
+  const { tRawArray, tString, locale } = useTranslation('testimonials');
 
   
- const testimonials = tArray<Testimonial>('testimonials');
+ const testimonials = tRawArray<Testimonial>('testimonials');
 
   return (
     <section id="testimonials" className="py-20 bg-background">

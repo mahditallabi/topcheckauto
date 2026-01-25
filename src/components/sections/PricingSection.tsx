@@ -143,36 +143,79 @@
 import { Check, Shield, Zap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/lib/i18n/useTranslation";
+import { useEffect, useState } from "react";
+import { getPricing, PricingData } from "@/api/pricing";
 
-const PricingSection = () => {
-  const { t } = useTranslation('pricing');
+const PricingSection = ({ onSelectPackage }) => {
+  const { t, locale } = useTranslation('pricing');
+  const lang = locale.startsWith('ar') ? 'ar' : 'en';
+  const [pricing, setPricing] = useState<PricingData | null>(null);
 
-  const pricingPlans = [
-    {
-      name: t('packages.basic.name'),
-      price: "350",
-      description: t('packages.basic.description'),
-      icon: Shield,
-      features: t('packages.basic.features'),
-      popular: false,
-    },
-    {
-      name: t('packages.standard.name'),
-      price: "550",
-      description: t('packages.standard.description'),
-      icon: Zap,
-      features: t('packages.standard.features'),
-      popular: true,
-    },
-    {
-      name: t('packages.premium.name'),
-      price: "800",
-      description: t('packages.premium.description'),
-      icon: Award,
-      features: t('packages.premium.features'),
-      popular: false,
-    },
-  ];
+  useEffect(() => {
+    getPricing(lang).then((data) => {
+      console.log('PRICING FROM SANITY:', data);
+      setPricing(data);
+    });
+  }, [lang]);
+
+  const pricingPlans =
+    pricing?.packages ??
+    [
+      {
+        key: 'basic',
+        icon: 'shield',
+        name: t('packages.basic.name'),
+        description: t('packages.basic.description'),
+        price: null,
+        popular: false,
+        features: "",
+      },
+      {
+        key: 'standard',
+        icon: 'zap',
+        name: t('packages.standard.name'),
+        description: t('packages.standard.description'),
+        price: null,
+        popular: true,
+        features: "",
+      },
+      {
+        key: 'premium',
+        icon: 'award',
+        name: t('packages.premium.name'),
+        description: t('packages.premium.description'),
+        price: null,
+        popular: false,
+        features: "",
+      },
+    ];
+
+  const ICONS_MAP = {
+    shield: Shield,
+    zap: Zap,
+    award: Award,
+  };
+
+  if (!pricing) {
+    return (
+      <section className="py-20 text-center">
+        <p className="text-muted-foreground">
+          {locale.startsWith('ar') ? 'جارٍ تحميل الباقات...' : 'Loading pricing...'}
+        </p>
+      </section>
+    );
+  }
+
+  // دالة لتخزين الباقة المختارة والانتقال للنموذج
+const handleSelectPackage = (plan) => {
+  onSelectPackage(plan.key); // basic | standard | premium
+
+  const contactSection = document.getElementById('formcontact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 
   return (
     <section id="pricing" className="py-20 bg-background">
@@ -190,7 +233,7 @@ const PricingSection = () => {
         {/* Pricing Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => {
-            const IconComponent = plan.icon;
+            const IconComponent = ICONS_MAP[plan.icon] ?? Shield;
             return (
               <div
                 key={index}
@@ -234,22 +277,16 @@ const PricingSection = () => {
                   ))}
                 </ul>
 
-                {/* Button */}
+                {/* Button - تم التعديل هنا */}
                 <Button
-                  asChild
+                  onClick={() => handleSelectPackage(plan)}
                   className={`w-full rounded-xl font-semibold py-6 ${
                     plan.popular
                       ? "bg-accent hover:bg-accent/90"
                       : "bg-primary hover:bg-primary/90"
                   }`}
                 >
-                  <a
-                    href="https://wa.me/212699581184"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {plan.popular ? t('price.selectPopularButton') : t('price.selectButton')}
-                  </a>
+                  {plan.popular ? t('price.selectPopularButton') : t('price.selectButton')}
                 </Button>
               </div>
             );

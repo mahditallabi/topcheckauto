@@ -166,11 +166,25 @@ import bg1 from "@/assets/bg.png";
 import bg2 from "@/assets/bg2.png";
 import bg3 from "@/assets/bg3.png";
 import { useTranslation } from "@/lib/i18n/useTranslation";
+import { getHero, HeroData } from "@/api/hero";
 
 const HeroSection = () => {
   const backgrounds = [bg1, bg2, bg3];
   const [index, setIndex] = useState(0);
-  const { t } = useTranslation('home');
+  const { t , locale} = useTranslation('home');
+  console.log('LOCALE:', locale);
+
+
+    // 🟢 Hero من Sanity
+  const [hero, setHero] = useState<HeroData | null>(null);
+
+useEffect(() => {
+  getHero(locale).then((data) => {
+    console.log('HERO FROM SANITY:', data);
+    setHero(data);
+  });
+}, [locale]);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -216,8 +230,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {t('hero.title1')}{" "}
-          <span className="text-accent">{t('hero.title2')}</span>؟
+          {hero?.title}{" "}
+          <span className="text-accent">{hero?.title2}{" "}</span>
         </motion.h1>
         
         <motion.p
@@ -226,7 +240,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          {t('hero.subtitle')}
+          {hero?.subtitle}
         </motion.p>
 
         <motion.div
@@ -241,7 +255,7 @@ const HeroSection = () => {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 text-lg"
             >
-              <a href="#contactForm" rel="noopener noreferrer">
+              <a href="#formcontact" rel="noopener noreferrer">
                 {t('hero.cta1')}
                 <ArrowLeft className="w-5 h-5 mr-2" />
               </a>

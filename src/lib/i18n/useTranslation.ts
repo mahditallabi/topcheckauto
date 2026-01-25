@@ -84,6 +84,29 @@ const tArray = <T = unknown>(key: string): T[] => {
   return Array.isArray(v) ? (v as T[]) : [];
 };
 
+const tRawArray = <T = unknown>(key: string): T[] => {
+  let current: TranslationNode | undefined = translations[namespace];
 
-  return { t, tString, tArray, locale: lang };
+  for (const k of key.split('.')) {
+    if (
+      typeof current !== 'object' ||
+      current === null ||
+      Array.isArray(current)
+    ) {
+      return [];
+    }
+
+    const record = current as Record<string, TranslationNode>;
+
+    if (!(k in record)) return [];
+
+    current = record[k];
+  }
+
+  return Array.isArray(current) ? (current as T[]) : [];
+};
+
+
+
+  return { t, tString, tArray,tRawArray, locale: lang };
 }

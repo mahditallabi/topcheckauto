@@ -2,36 +2,36 @@
   "hero": {
     "title1": {
       "ar": "هل تريد شراء",
-      "en": "Do you want to buy a"
+      "en": "Vous voulez acheter une"
     },
     "title2": {
       "ar": "سيارة مستعملة",
-      "en": "used car"
+      "en": "voiture d'occasion"
     },
     "subtitle": {
       "ar": "لكن ليس لديك الخبرة في فحص السيارات المستعملة؟ إتصل الان لحجز موعد مع أحد التقنيين لدينا، واحصل على تقرير شامل ومفصل قبل الشراء واترك المسؤولية لنا.",
-      "en": "But don't have experience in used car inspection? Contact us now to book an appointment with one of our technicians, get a comprehensive report before buying, and leave the responsibility to us."
+      "en": "Mais vous n'avez pas d'expérience dans l'inspection des voitures d'occasion ? Contactez-nous dès maintenant pour prendre rendez-vous avec l'un de nos techniciens, obtenez un rapport complet et détaillé avant l'achat et laissez-nous la responsabilité."
     },
     "cta1": {
       "ar": "احجز الخبير الأن",
-      "en": "Book an Expert Now"
+      "en": "Réservez un expert maintenant"
     },
     "cta2": {
       "ar": "تمن الخدمة",
-      "en": "Service Price"
+      "en": "Tarif du service"
     },
     "stats": {
       "inspectionPoints": {
         "ar": "نقطة فحص",
-        "en": "Inspection Points"
+        "en": "Points d'inspection"
       },
       "happyClients": {
         "ar": "عميل سعيد",
-        "en": "Happy Clients"
+        "en": "Clients satisfaits"
       },
       "citiesCovered": {
         "ar": "مدن مغطاة",
-        "en": "Cities Covered"
+        "en": "Villes couvertes"
       }
     }
   }

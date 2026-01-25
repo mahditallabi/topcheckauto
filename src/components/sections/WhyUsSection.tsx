@@ -171,6 +171,9 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { urlFor } from '@/lib/sanityImage'
+import { getHero, HeroData } from "@/api/hero";
+import { useEffect, useState } from "react";
 
 type Feature = {
   title: string;
@@ -178,10 +181,21 @@ type Feature = {
 };
 
 const WhyUsSection = () => {
-  const { tString, tArray } = useTranslation('whyUs');
+  const { tString, tArray,locale } = useTranslation('whyUs');
+      // 🟢 Hero من Sanity
+  const [hero, setHero] = useState<HeroData | null>(null);
 
+useEffect(() => {
+  getHero(locale).then((data) => {
+    console.log('HERO FROM SANITY:', data);
+    setHero(data);
+  });
+}, [locale]);
   const missionPoints = tArray<string>('mission.points');
   const features = tArray<Feature>('features');
+  const imageUrl = hero?.image
+   ? urlFor(hero.image).width(1000).height(400).quality(80).url()
+   : "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80";
 
   return (
     <section id="why-us" className="py-20 bg-background">
@@ -208,7 +222,7 @@ const WhyUsSection = () => {
 
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
               <img
-                src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80"
+                src={imageUrl}
                 alt="خدمة فحص السيارات"
                 className="w-full h-[400px] object-cover"
               />

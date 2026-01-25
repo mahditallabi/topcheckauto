@@ -1,40 +1,40 @@
 {
   "title": {
     "ar": "لماذا <span class=\"text-accent\">نحن</span>؟",
-    "en": "Why <span class=\"text-accent\">Choose Us</span>?"
+    "en": "Pourquoi <span class=\"text-accent\">nous choisir</span> "
   },
   "description": {
     "ar": "نلتزم بتوفير تجربة شراء لسيارات المستعملة بدون أي مشاكل. فريقنا المؤهل من تقنيين متخصصين لمرافقتك طوال العملية، وتزويدك بمعلومات دقيقة ومفصلة حول كل سيارة.",
-    "en": "We are committed to providing a hassle-free used car buying experience. Our qualified team of specialized technicians will accompany you throughout the process and provide you with accurate and detailed information about each car."
+    "en": "Nous nous engageons à fournir une expérience d'achat de voiture d'occasion sans tracas. Notre équipe qualifiée de techniciens spécialisés vous accompagnera tout au long du processus et vous fournira des informations précises et détaillées sur chaque véhicule."
   },
   "mission": {
     "title": {
       "ar": "مهمتنا ورؤيتنا",
-      "en": "Our Mission & Vision"
+      "en": "Notre mission & vision"
     },
     "description": {
       "ar": "نهدف إلى جعل سوق السيارات المستعملة أكثر أمانًا وشفافية للمشترين. نحن نؤمن بأن كل مشتري سيارة يستحق أن يعرف الحقيقة الكاملة عن المركبة قبل اتخاذ قرار الشراء.",
-      "en": "We aim to make the used car market safer and more transparent for buyers. We believe that every car buyer deserves to know the full truth about the vehicle before making a purchase decision."
+      "en": "Nous visons à rendre le marché des voitures d'occasion plus sûr et plus transparent pour les acheteurs. Nous croyons que chaque acheteur de voiture mérite de connaître toute la vérité sur le véhicule avant de prendre une décision d'achat."
     },
     "points": [
       {
         "ar": "فريق من التقنيين المعتمدين",
-        "en": "Team of certified technicians"
+        "en": "Équipe de techniciens certifiés"
       },
       {
         "ar": "أحدث أجهزة التشخيص",
-        "en": "Latest diagnostic equipment"
+        "en": "Équipement de diagnostic dernier cri"
       },
       {
         "ar": "خدمة في جميع أنحاء المغرب",
-        "en": "Service throughout Morocco"
+        "en": "Service dans tout le Maroc"
       }
     ]
   },
   "stats": {
     "experience": {
       "ar": "سنوات خبرة",
-      "en": "Years of experience"
+      "en": "Années d'expérience"
     },
     "clients": {
       "ar": "عميل",
@@ -42,7 +42,7 @@
     },
     "accuracy": {
       "ar": "دقة",
-      "en": "Accuracy"
+      "en": "Précision"
     }
   },
   "features": [
@@ -53,37 +53,37 @@
       },
       "description": {
         "ar": "يتنقل التقني إلى مالك السيارة، فوجودك ليس إلزاميًا حتى لو رأيت سيارة في مدينة أخرى",
-        "en": "The technician travels to the car owner, your presence is not mandatory even if you saw a car in another city"
+        "en": "Le technicien se déplace chez le propriétaire de la voiture, votre présence n'est pas obligatoire même si vous avez vu une voiture dans une autre ville"
       }
     },
     {
       "title": {
         "ar": "النصائح",
-        "en": "Expert Advice"
+        "en": "Conseils d'expert"
       },
       "description": {
         "ar": "يوصي التقنيون لدينا بما إذا كان بإمكانك شراء السيارة أم لا إضافة إلى الثمن المناسب لها",
-        "en": "Our technicians recommend whether you should buy the car or not, plus the appropriate price for it"
+        "en": "Nos techniciens recommandent si vous devez acheter la voiture ou non, ainsi que le prix approprié"
       }
     },
     {
       "title": {
         "ar": "الجاهزية",
-        "en": "Availability"
+        "en": "Disponibilité"
       },
       "description": {
         "ar": "التقنيون لدينا على استعداد دائم للإستجابة لمطالبكم في أي وقت",
-        "en": "Our technicians are always ready to respond to your requests at any time"
+        "en": "Nos techniciens sont toujours prêts à répondre à vos demandes à tout moment"
       }
     },
     {
       "title": {
         "ar": "الشفافية",
-        "en": "Transparency"
+        "en": "Transparence"
       },
       "description": {
         "ar": "يقوم التقنيون لدينا المحترفون بفحص السيارة في أكثر من 150 نقطة تفتيش",
-        "en": "Our professional technicians inspect the car at more than 150 inspection points"
+        "en": "Nos techniciens professionnels inspectent la voiture à plus de 150 points de contrôle"
       }
     }
   ],
@@ -91,21 +91,21 @@
     "highQuality": {
       "title": {
         "ar": "جودة عالية",
-        "en": "High Quality"
+        "en": "Haute qualité"
       },
       "description": {
         "ar": "أعلى معايير الجودة في الفحص",
-        "en": "Highest quality standards in inspection"
+        "en": "Normes de qualité les plus élevées pour l'inspection"
       }
     },
     "serviceGuarantee": {
       "title": {
         "ar": "ضمان الخدمة",
-        "en": "Service Guarantee"
+        "en": "Garantie de service"
       },
       "description": {
         "ar": "تقارير مضمونة ودقيقة",
-        "en": "Guaranteed and accurate reports"
+        "en": "Rapports garantis et précis"
       }
     }
   }

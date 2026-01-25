@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -9,6 +12,8 @@ import ContactSection from "@/components/sections/ContactSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -16,9 +21,14 @@ const Index = () => {
         <HeroSection />
         <WhyUsSection />
         <ServicesSection />
-        <PricingSection />
+
+        {/* نمررو setter */}
+        <PricingSection onSelectPackage={setSelectedPackage} />
+
         <TestimonialsSection />
-        <ContactSection />
+
+        {/* نمررو القيمة */}
+        <ContactSection selectedPackage={selectedPackage} />
       </main>
       <Footer />
       <WhatsAppButton />
