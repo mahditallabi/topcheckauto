@@ -14,6 +14,7 @@ export type HeroData = {
   title2: string
   subtitle: string
   phone: string
+  email: string
   image?: SanityImageSource
 }
 
@@ -25,7 +26,8 @@ export const getHero = async (
       "title": title[$lang],
       "title2": title2[$lang],
       "subtitle": subtitle[$lang],
-      "phone": phone[$lang],
+      phone,
+      email,
       image
     }`,
     { lang }
