@@ -211,7 +211,7 @@ const Footer = () => {
       rel="noopener noreferrer"
       className="hover:opacity-100 underline"
     >
-      مبرمج أيوب
+     {t('footer.ayoub')}
     </a>
   </p>
 </div>
