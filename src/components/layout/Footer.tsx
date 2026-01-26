@@ -195,11 +195,27 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
+        {/* <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
           <p className="opacity-60 text-sm">
             © {currentYear} TopCheck Auto. {t('footer.rightsReserved')}.
           </p>
-        </div>
+        </div> */}
+        {/* Copyright */}
+<div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
+  <p className="opacity-60 text-sm">
+    © {currentYear} TopCheck Auto. {t('footer.rightsReserved')}.  
+    <span className="mx-1">|</span>
+    <a
+      href="https://wa.me/212766040155"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:opacity-100 underline"
+    >
+      مبرمج أيوب
+    </a>
+  </p>
+</div>
+
       </div>
     </footer>
   );
