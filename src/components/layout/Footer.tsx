@@ -204,6 +204,7 @@ const Footer = () => {
 <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
   <p className="opacity-60 text-sm">
     © {currentYear} TopCheck Auto. {t('footer.rightsReserved')}.  
+    <br/>
     <span className="mx-1">|</span>
     <a
       href="https://wa.me/212766040155"
