@@ -420,8 +420,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import emailjs from '@emailjs/browser';
 
-// قم بتعريف هذه المعلومات في ملف .env.local
-// أو استبدلها مباشرة هنا
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -444,7 +442,6 @@ const ContactSection = ({ selectedPackage }) => {
 
   useEffect(() => {
     getHero(locale).then((data) => {
-      console.log('HERO FROM SANITY:', data);
       setHero(data);
     });
   }, [locale]);
@@ -455,30 +452,87 @@ const ContactSection = ({ selectedPackage }) => {
     }
   }, [selectedPackage]);
 
-  const cities = [
-    "الدار البيضاء",
-    "المحمدية",
-    "الرباط",
-    "تمارة",
-    "سلا",
-    "فاس",
-    "طنجة",
-    "مكناس",
-    "مراكش",
-    "القنيطرة",
-    "مدن أخرى"
-  ];
+  // Cities based on locale
+  const cities = {
+    ar: [
+      "الدار البيضاء",
+      "المحمدية",
+      "الرباط",
+      "تمارة",
+      "سلا",
+      "فاس",
+      "طنجة",
+      "مكناس",
+      "مراكش",
+      "القنيطرة",
+      "مدن أخرى"
+    ],
+    en: [
+      "Casablanca",
+      "Mohammedia",
+      "Rabat",
+      "Témara",
+      "Salé",
+      "Fès",
+      "Tanger",
+      "Meknès",
+      "Marrakech",
+      "Kénitra",
+      "Other cities"
+    ]
+  };
 
-  const timeSlots = [
-    "9:00 - 10:00",
-    "10:00 - 11:00",
-    "11:00 - 12:00",
-    "12:00 - 13:00",
-    "14:00 - 15:00",
-    "15:00 - 16:00",
-    "16:00 - 17:00",
-    "17:00 - 18:00"
-  ];
+  // Time slots based on locale
+  const timeSlots = {
+    ar: [
+      "9:00 - 10:00",
+      "10:00 - 11:00",
+      "11:00 - 12:00",
+      "12:00 - 13:00",
+      "14:00 - 15:00",
+      "15:00 - 16:00",
+      "16:00 - 17:00",
+      "17:00 - 18:00"
+    ],
+    en: [
+      "9:00 AM - 10:00 AM",
+      "10:00 AM - 11:00 AM",
+      "11:00 AM - 12:00 PM",
+      "12:00 PM - 1:00 PM",
+      "2:00 PM - 3:00 PM",
+      "3:00 PM - 4:00 PM",
+      "4:00 PM - 5:00 PM",
+      "5:00 PM - 6:00 PM"
+    ]
+  };
+
+  // Packages with translations
+  const packages = {
+    ar: [
+      { value: "basic", label: "الباقة الأساسية" },
+      { value: "standard", label: "الباقة القياسية" },
+      { value: "premium", label: "الباقة المتميزة" }
+    ],
+    en: [
+      { value: "basic", label: "Basic Package" },
+      { value: "standard", label: "Standard Package" },
+      { value: "premium", label: "Premium Package" }
+    ]
+  };
+
+  // Success messages based on locale
+  const successMessages = {
+    ar: {
+      title: "تم إرسال طلب الحجز بنجاح!",
+      description: "شكراً لك، سنتواصل معك في أقرب وقت ممكن لتأكيد الموعد.",
+      orderNumber: "رقم الطلب"
+    },
+    en: {
+      title: "Booking request sent successfully!",
+      description: "Thank you, we will contact you as soon as possible to confirm the appointment.",
+      orderNumber: "Order number"
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -494,14 +548,15 @@ const ContactSection = ({ selectedPackage }) => {
     setIsLoading(true);
 
     try {
-      // تحقق من وجود البيانات المطلوبة
       if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-        throw new Error('معلومات EmailJS غير مكتملة. يرجى التحقق من إعدادات البيئة.');
+        throw new Error(locale === 'ar' 
+          ? 'معلومات EmailJS غير مكتملة. يرجى التحقق من إعدادات البيئة.'
+          : 'EmailJS information is incomplete. Please check environment settings.'
+        );
       }
 
-      // إعداد بيانات القالب
       const templateParams = {
-        to_name: "Admin", // اسم المستلم
+        to_name: "Admin",
         from_name: formData.name,
         from_phone: formData.phone,
         from_city: formData.city,
@@ -509,17 +564,19 @@ const ContactSection = ({ selectedPackage }) => {
         package: formData.package,
         message: formData.message,
         reply_to: hero?.email || "no-reply@example.com",
-        subject: `طلب حجز جديد - ${formData.name}`,
-        date: new Date().toLocaleDateString('ar-MA', {
+        subject: locale === 'ar' 
+          ? `طلب حجز جديد - ${formData.name}`
+          : `New Booking Request - ${formData.name}`,
+        date: new Date().toLocaleDateString(locale === 'ar' ? 'ar-MA' : 'fr-FR', {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
           day: 'numeric'
         }),
+        locale: locale,
         order_number: `TC-${Date.now().toString().slice(-6)}`
       };
 
-      // إرسال البريد عبر EmailJS
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -528,10 +585,7 @@ const ContactSection = ({ selectedPackage }) => {
       );
 
       if (response.status === 200) {
-        console.log("Email sent successfully:", response);
         setIsSubmitted(true);
-        
-        // إعادة تعيين النموذج
         setTimeout(() => {
           setIsSubmitted(false);
           setFormData({
@@ -544,19 +598,27 @@ const ContactSection = ({ selectedPackage }) => {
           });
         }, 5000);
       } else {
-        throw new Error('فشل إرسال البريد الإلكتروني');
+        throw new Error(locale === 'ar' 
+          ? 'فشل إرسال البريد الإلكتروني'
+          : 'Failed to send email'
+        );
       }
       
     } catch (error) {
       console.error("Error sending email:", error);
       
-      // رسائل خطأ مختلفة حسب نوع الخطأ
-      if (error.message.includes('معلومات EmailJS')) {
-        alert("خطأ في الإعدادات: " + error.message);
-      } else if (error.message.includes('فشل')) {
-        alert("عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.");
+      if (error.message.includes(locale === 'ar' ? 'معلومات EmailJS' : 'EmailJS information')) {
+        alert(error.message);
+      } else if (error.message.includes(locale === 'ar' ? 'فشل' : 'Failed')) {
+        alert(locale === 'ar' 
+          ? "عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى."
+          : "Sorry, an error occurred while sending the request. Please try again."
+        );
       } else {
-        alert("عذراً، حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً.");
+        alert(locale === 'ar' 
+          ? "عذراً، حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً."
+          : "Sorry, an unexpected error occurred. Please try again later."
+        );
       }
     } finally {
       setIsLoading(false);
@@ -589,10 +651,11 @@ const ContactSection = ({ selectedPackage }) => {
   ];
 
   if (isSubmitted) {
+    const messages = successMessages[locale];
+    
     return (
       <section id="contact" className="py-20 bg-background">
         <div className="container">
-          {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               <span dangerouslySetInnerHTML={{ __html: t('title') }} />
@@ -610,14 +673,14 @@ const ContactSection = ({ selectedPackage }) => {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                    تم إرسال طلب الحجز بنجاح!
+                    {messages.title}
                   </h3>
                   <p className="text-muted-foreground text-lg">
-                    شكراً لك، سنتواصل معك في أقرب وقت ممكن لتأكيد الموعد.
+                    {messages.description}
                   </p>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  رقم الطلب: <span className="font-mono font-bold">TC-{Date.now().toString().slice(-6)}</span>
+                  {messages.orderNumber}: <span className="font-mono font-bold">TC-{Date.now().toString().slice(-6)}</span>
                 </p>
               </div>
             </div>
@@ -630,7 +693,6 @@ const ContactSection = ({ selectedPackage }) => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             <span dangerouslySetInnerHTML={{ __html: t('title') }} />
@@ -641,7 +703,6 @@ const ContactSection = ({ selectedPackage }) => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Contact Info Cards */}
           {contactInfo.map((info, index) => (
             <div
               key={info.title}
@@ -655,30 +716,13 @@ const ContactSection = ({ selectedPackage }) => {
               {info.href ? (
                 <a
                   href={info.href}
-                  className="
-                    text-muted-foreground
-                    hover:text-accent
-                    transition-colors
-                    leading-relaxed
-                    block
-                    break-all
-                    sm:break-words
-                    overflow-hidden
-                  "
+                  className="text-muted-foreground hover:text-accent transition-colors leading-relaxed block break-all sm:break-words overflow-hidden"
                   dir="ltr"
                 >
                   {info.value}
                 </a>
               ) : (
-                <p
-                  className="
-                    text-muted-foreground
-                    leading-relaxed
-                    break-all
-                    sm:break-words
-                    overflow-hidden
-                  "
-                >
+                <p className="text-muted-foreground leading-relaxed break-all sm:break-words overflow-hidden">
                   {info.value}
                 </p>
               )}
@@ -686,7 +730,6 @@ const ContactSection = ({ selectedPackage }) => {
           ))}
         </div>
 
-        {/* Contact Form */}
         <div className="max-w-2xl mx-auto">
           <div className="bg-secondary rounded-2xl p-8">
             <div className="text-center mb-8">
@@ -694,44 +737,45 @@ const ContactSection = ({ selectedPackage }) => {
                 <Calendar className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                احجز موعد فحص
+                {tString('booking.title')}
               </h3>
               <p className="text-muted-foreground">
-                املأ النموذج وسنتواصل معك خلال 24 ساعة
+                {tString('booking.description')}
               </p>
             </div>
 
             <form id="formcontact" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                {/* الاسم الكامل */}
+                {/* Full Name */}
                 <div className="space-y-3">
                   <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                     <User className="w-4 h-4" />
-                    الاسم الكامل *
+                    {tString('booking.form.fullName')} *
                   </label>
                   <Input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="أدخل اسمك الكامل"
+                    placeholder={tString('booking.form.placeholders.fullName')}
                     required
                     disabled={isLoading}
                     className="h-12 rounded-xl border-border bg-background focus:border-primary"
+                    dir={locale === 'ar' ? 'rtl' : 'ltr'}
                   />
                 </div>
 
-                {/* رقم الهاتف */}
+                {/* Phone Number */}
                 <div className="space-y-3">
                   <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                     <Phone className="w-4 h-4" />
-                    رقم الهاتف *
+                    {tString('booking.form.phoneNumber')} *
                   </label>
                   <Input
                     name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+212 600-000000"
+                    placeholder={tString('booking.form.placeholders.phoneNumber')}
                     required
                     disabled={isLoading}
                     className="h-12 rounded-xl border-border bg-background focus:border-primary"
@@ -739,11 +783,11 @@ const ContactSection = ({ selectedPackage }) => {
                   />
                 </div>
 
-                {/* الباقة */}
+                {/* Package */}
                 <div className="space-y-3">
                   <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                     <CheckCircle className="w-4 h-4" />
-                    الباقة المختارة *
+                    {locale === 'ar' ? 'الباقة المختارة' : 'Selected Package'} *
                   </label>
                   <Select
                     value={formData.package}
@@ -752,21 +796,23 @@ const ContactSection = ({ selectedPackage }) => {
                     disabled={isLoading}
                   >
                     <SelectTrigger className="h-12 rounded-xl border-border bg-background focus:border-primary">
-                      <SelectValue placeholder="اختر الباقة" />
+                      <SelectValue placeholder={locale === 'ar' ? "اختر الباقة" : "Choose package"} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="basic">Basic</SelectItem>
-                      <SelectItem value="standard">Standard</SelectItem>
-                      <SelectItem value="premium">Premium</SelectItem>
+                      {packages[locale].map((pkg) => (
+                        <SelectItem key={pkg.value} value={pkg.value}>
+                          {pkg.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
 
-                {/* المدينة */}
+                {/* City */}
                 <div className="space-y-3">
                   <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                     <MapPin className="w-4 h-4" />
-                    المدينة *
+                    {tString('booking.form.city')} *
                   </label>
                   <Select
                     value={formData.city}
@@ -775,10 +821,10 @@ const ContactSection = ({ selectedPackage }) => {
                     disabled={isLoading}
                   >
                     <SelectTrigger className="h-12 rounded-xl border-border bg-background focus:border-primary">
-                      <SelectValue placeholder="اختر مدينتك" />
+                      <SelectValue placeholder={tString('booking.form.placeholders.city')} />
                     </SelectTrigger>
                     <SelectContent>
-                      {cities.map((city) => (
+                      {cities[locale].map((city) => (
                         <SelectItem key={city} value={city}>
                           {city}
                         </SelectItem>
@@ -787,11 +833,11 @@ const ContactSection = ({ selectedPackage }) => {
                   </Select>
                 </div>
 
-                {/* الوقت */}
+                {/* Preferred Time */}
                 <div className="space-y-3">
                   <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                     <Clock className="w-4 h-4" />
-                    الوقت المفضل *
+                    {locale === 'ar' ? 'الوقت المفضل' : 'Preferred Time'} *
                   </label>
                   <Select
                     value={formData.time}
@@ -800,10 +846,10 @@ const ContactSection = ({ selectedPackage }) => {
                     disabled={isLoading}
                   >
                     <SelectTrigger className="h-12 rounded-xl border-border bg-background focus:border-primary">
-                      <SelectValue placeholder="اختر الوقت" />
+                      <SelectValue placeholder={locale === 'ar' ? "اختر الوقت" : "Choose time"} />
                     </SelectTrigger>
                     <SelectContent>
-                      {timeSlots.map((slot) => (
+                      {timeSlots[locale].map((slot) => (
                         <SelectItem key={slot} value={slot}>
                           {slot}
                         </SelectItem>
@@ -813,24 +859,25 @@ const ContactSection = ({ selectedPackage }) => {
                 </div>
               </div>
 
-              {/* الرسالة */}
+              {/* Additional Notes */}
               <div className="space-y-3 mb-6">
                 <label className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <MessageCircle className="w-4 h-4" />
-                  ملاحظات إضافية
+                  {tString('booking.form.additionalNotes')}
                 </label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="أي معلومات إضافية عن السيارة أو طلبات خاصة..."
+                  placeholder={tString('booking.form.placeholders.additionalNotes')}
                   rows={4}
                   disabled={isLoading}
                   className="rounded-xl border-border bg-background focus:border-primary resize-none"
+                  dir={locale === 'ar' ? 'rtl' : 'ltr'}
                 />
               </div>
 
-              {/* زر الإرسال */}
+              {/* Submit Button */}
               <div>
                 <Button
                   type="submit"
@@ -840,14 +887,14 @@ const ContactSection = ({ selectedPackage }) => {
                   {isLoading ? (
                     <div className="flex items-center justify-center">
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin ml-2"></div>
-                      جاري الإرسال...
+                      {locale === 'ar' ? 'جاري الإرسال...' : 'Sending...'}
                     </div>
                   ) : (
                     <>
                       <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                       </svg>
-                      إرسال طلب الحجز
+                      {tString('booking.submitButton')}
                     </>
                   )}
                 </Button>
