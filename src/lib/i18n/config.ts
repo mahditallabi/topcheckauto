@@ -4,7 +4,7 @@ export type Locale = typeof locales[number];
 
 export const localeNames: Record<Locale, string> = {
   ar: 'العربية',
-  en: 'Francies'
+  en: 'Français'
 };
 
 export const rtlLocales = ['ar'];
