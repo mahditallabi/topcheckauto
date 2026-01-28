@@ -164,7 +164,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import bg1 from "@/assets/bg.png";
 import bg2 from "@/assets/bg2.png";
-import bg3 from "@/assets/bg3.png";
+import bg3 from "@/assets/bg3.webp";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { getHero, HeroData } from "@/api/hero";
 
