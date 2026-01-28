@@ -162,9 +162,9 @@ import { Play, ArrowLeft } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import bg1 from "@/assets/bg.png";
+import bg1 from "@/assets/bg3.webp";
 import bg2 from "@/assets/bg2.png";
-import bg3 from "@/assets/bg3.webp";
+import bg3 from "@/assets/bg.png";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { getHero, HeroData } from "@/api/hero";
 
