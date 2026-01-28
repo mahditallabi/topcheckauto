@@ -509,14 +509,14 @@ const ContactSection = ({ selectedPackage }) => {
   // Packages with translations
   const packages = {
     ar: [
-      { value: "basic", label: "الباقة الأساسية" },
-      { value: "standard", label: "الباقة القياسية" },
-      { value: "premium", label: "الباقة المتميزة" }
+      { value: "basic", label: "الباك الأساسي" },
+      { value: "standard", label: "الباك المتعمق" },
+      { value: "premium", label: "الباك البريميوم" }
     ],
     en: [
-      { value: "basic", label: "Basic Package" },
-      { value: "standard", label: "Standard Package" },
-      { value: "premium", label: "Premium Package" }
+      { value: "basic", label: "Pack Basic" },
+      { value: "standard", label: "Pack Approfondi" },
+      { value: "premium", label: "Pack Premium" }
     ]
   };
 
