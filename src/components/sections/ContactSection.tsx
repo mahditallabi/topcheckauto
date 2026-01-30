@@ -178,18 +178,18 @@ const ContactSection = ({ selectedPackage }) => {
 
       if (response.status === 200) {
         setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({
-            name: "",
-            phone: "",
-            city: "",
-            time: "",
-            carModel: "", // إعادة تعيين حقل السيارة
-            message: "",
-            package: selectedPackage ?? "",
-          });
-        }, 5000);
+        // setTimeout(() => {
+        //   setIsSubmitted(false);
+        //   setFormData({
+        //     name: "",
+        //     phone: "",
+        //     city: "",
+        //     time: "",
+        //     carModel: "", // إعادة تعيين حقل السيارة
+        //     message: "",
+        //     package: selectedPackage ?? "",
+        //   });
+        // }, 5000);
       } else {
         throw new Error(locale === 'ar' 
           ? 'فشل إرسال البريد الإلكتروني'
@@ -242,46 +242,104 @@ const ContactSection = ({ selectedPackage }) => {
       value: tString('contactInfo.areaValue'),
     },
   ];
-
-  if (isSubmitted) {
-    const messages = successMessages[locale];
+  
+  // if (isSubmitted) {
+  //   const messages = successMessages[locale];
     
-    return (
-      <section id="contact" className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              <span dangerouslySetInnerHTML={{ __html: t('title') }} />
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              {t('description')}
-            </p>
-          </div>
+  //   return (
+  //     <section id="contact" className="py-20 bg-background">
+  //       <div className="container">
+  //         <div className="text-center max-w-3xl mx-auto mb-16">
+  //           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+  //             <span dangerouslySetInnerHTML={{ __html: t('title') }} />
+  //           </h2>
+  //           <p className="text-muted-foreground text-lg leading-relaxed">
+  //             {t('description')}
+  //           </p>
+  //         </div>
 
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 md:p-12 text-center border border-border shadow-lg">
-              <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
-                  <CheckCircle className="w-12 h-12 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                    {messages.title}
-                  </h3>
-                  <p className="text-muted-foreground text-lg">
-                    {messages.description}
-                  </p>
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  {messages.orderNumber}: <span className="font-mono font-bold">TC-{Date.now().toString().slice(-6)}</span>
+  //         <div className="max-w-2xl mx-auto">
+  //           <div className="bg-white rounded-3xl p-8 md:p-12 text-center border border-border shadow-lg">
+  //             <div className="flex flex-col items-center justify-center space-y-6">
+  //               <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
+  //                 <CheckCircle className="w-12 h-12 text-green-600" />
+  //               </div>
+  //               <div>
+  //                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+  //                   {messages.title}
+  //                 </h3>
+  //                 <p className="text-muted-foreground text-lg">
+  //                   {messages.description}
+  //                 </p>
+  //               </div>
+  //               <p className="text-sm text-muted-foreground mt-4">
+  //                 {messages.orderNumber}: <span className="font-mono font-bold">TC-{Date.now().toString().slice(-6)}</span>
+  //               </p>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // }
+  if (isSubmitted) {
+  const messages = successMessages[locale];
+  
+  return (
+    <section id="contact" className="py-20 bg-background">
+      <div className="container">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <span dangerouslySetInnerHTML={{ __html: t('title') }} />
+          </h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            {t('description')}
+          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl p-8 md:p-12 text-center border border-border shadow-lg">
+            <div className="flex flex-col items-center justify-center space-y-6">
+              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
+                <CheckCircle className="w-12 h-12 text-green-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  {messages.title}
+                </h3>
+                <p className="text-muted-foreground text-lg">
+                  {messages.description}
                 </p>
               </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                {messages.orderNumber}: <span className="font-mono font-bold">TC-{Date.now().toString().slice(-6)}</span>
+              </p>
+              
+              {/* زر للعودة يدويًا بدلاً من التوجيه التلقائي */}
+              <Button
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setFormData({
+                    name: "",
+                    phone: "",
+                    city: "",
+                    time: "",
+                    carModel: "",
+                    message: "",
+                    package: selectedPackage ?? "",
+                  });
+                }}
+                className="mt-6 bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold transition-colors"
+              >
+                {locale === 'ar' ? 'إنشاء طلب جديد' : 'Create New Request'}
+              </Button>
             </div>
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
 
   return (
     <section id="contact" className="py-20 bg-background">
